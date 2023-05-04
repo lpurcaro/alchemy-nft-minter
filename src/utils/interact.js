@@ -6,7 +6,7 @@ const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
 const contractABI = require('../contract-abi.json')
-const contractAddress = "0x6Af2D0EF13B32c809AFD84d649f3fdc00C0752a2";
+const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
 
 export const connectWallet = async () => {
     if (window.ethereum) {
@@ -77,6 +77,11 @@ export const getErrorMessage = () => {
 }
 
 export const mintNFT = async(url, name, description) => {
+
+
+    console.log("HOLA MANOLA")
+    console.log({contractAddress})
+
     //error handling
     if (url.trim() == "" || (name.trim() == "" || description.trim() == "")) {
         return {
