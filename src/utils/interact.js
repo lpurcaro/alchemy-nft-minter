@@ -78,10 +78,6 @@ export const getErrorMessage = () => {
 
 export const mintNFT = async(url, name, description) => {
 
-
-    console.log("HOLA MANOLA")
-    console.log({contractAddress})
-
     //error handling
     if (url.trim() == "" || (name.trim() == "" || description.trim() == "")) {
         return {
